@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraChuoi(str1, str2) {
+        if (str1.length > str2.length) {
+            return false;
+        }
+        for (let i = 0; i <= str2.length - str1.length; i++) {
+            let found = true;
+            for (let j = 0; j < str1.length; j++) {
+                if (str2[i + j] !== str1[j]) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    let str1 = "abc";
+    let str2 = "xyzabcuvw";
+
+    let ketQua = kiemTraChuoi(str1, str2);
+    console.log(ketQua);
+</script>
+</body>
+</html>
